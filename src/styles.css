@@ -202,7 +202,7 @@
 }
 
 @utility base-bold {
-    @apply leading-[calc(var(--text-h4) * var(--leading-ratio))] font-bold text-[var(--text-h4)];
+    @apply leading-[140%] font-bold text-[var(--text-h4)];
 }
 
 @utility paragraph-regular {
