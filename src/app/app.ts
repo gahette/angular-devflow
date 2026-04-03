@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { RouterOutlet } from '@angular/router';
 
@@ -9,12 +9,12 @@ import { RouterOutlet } from '@angular/router';
     styleUrl: './app.css',
 })
 export class App {
-    // protected readonly title = signal('angular-devflow');
     private title = inject(Title);
     private meta = inject(Meta);
 
     constructor() {
         this.title.setTitle('AngularDevflow');
+
         this.meta.updateTag({
             name: 'description',
             content:
