@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
-@import 'tailwindcss';
 @import 'tailwindcss-primeui';
+@import 'primeicons/primeicons.css';
+@import 'tailwindcss';
 
 @plugin "@tailwindcss/typography";
 
-@custom-variant dark (&:where(.my-app-dark, .my-app-dark *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
     --font-sans: 'Inter', sans-serif;
@@ -67,6 +68,9 @@
     --shadow-dark-100: 0px 2px 10px 0px rgba(46, 52, 56, 0.1);
     --shadow-dark-200: 2px 0px 20px 0px rgba(39, 36, 36, 0.04);
 
+    --background-image-auth-dark: url('/images/auth-dark.png');
+    --background-image-auth-light: url('/images/auth-light.png');
+
     --breakpoint-xs: 420px;
 }
 
@@ -83,6 +87,13 @@
     }
 }
 
+@utility bg-auth-dark {
+    background-image: var(--background-image-auth-dark);
+}
+
+@utility bg-auth-light {
+    background-image: var(--background-image-auth-light);
+}
 @utility background-light850_dark100 {
     @apply bg-light-850 dark:bg-dark-100;
 }
@@ -447,4 +458,33 @@ code {
 [data-bright-mode='light']:not(:not(html.light [data-bright-mode='light'])) {
     display: grid !important;
     width: 100% !important;
+}
+
+/* PrimeNG color overrides to match Tailwind custom colors */
+:root {
+    --p-primary-50: #fff1e6;
+    --p-primary-100: #fff1e6;
+    --p-primary-200: #ffe6cc;
+    --p-primary-300: #ffdab3;
+    --p-primary-400: #ffcf99;
+    --p-primary-500: #ff7000;
+    --p-primary-600: #cc5a00;
+    --p-primary-700: #994400;
+    --p-primary-800: #662d00;
+    --p-primary-900: #331700;
+    --p-primary-contrast: #ffffff;
+}
+
+.my-app-dark {
+    --p-primary-50: #fff1e6;
+    --p-primary-100: #fff1e6;
+    --p-primary-200: #ffe6cc;
+    --p-primary-300: #ffdab3;
+    --p-primary-400: #ffcf99;
+    --p-primary-500: #ff7000;
+    --p-primary-600: #cc5a00;
+    --p-primary-700: #994400;
+    --p-primary-800: #662d00;
+    --p-primary-900: #331700;
+    --p-primary-contrast: #ffffff;
 }

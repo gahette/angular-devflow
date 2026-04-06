@@ -1,6 +1,5 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter } from '@angular/router';
-
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { providePrimeNG } from 'primeng/config';
@@ -15,7 +14,38 @@ export const appConfig: ApplicationConfig = {
             theme: {
                 preset: Aura,
                 options: {
-                    darkModeSelector: '.my-app-dark',
+                    darkModeSelector: '.dark',
+                    // @ts-ignore
+                    colorSchemeOverride: {
+                        light: {
+                            primary: {
+                                50: '#fff1e6',
+                                100: '#fff1e6',
+                                200: '#ffe6cc',
+                                300: '#ffdab3',
+                                400: '#ffcf99',
+                                500: '#ff7000',
+                                600: '#cc5a00',
+                                700: '#994400',
+                                800: '#662d00',
+                                900: '#331700',
+                            },
+                        },
+                        dark: {
+                            primary: {
+                                50: '#fff1e6',
+                                100: '#fff1e6',
+                                200: '#ffe6cc',
+                                300: '#ffdab3',
+                                400: '#ffcf99',
+                                500: '#ff7000',
+                                600: '#cc5a00',
+                                700: '#994400',
+                                800: '#662d00',
+                                900: '#331700',
+                            },
+                        },
+                    },
                 },
             },
         }),

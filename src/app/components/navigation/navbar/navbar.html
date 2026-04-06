@@ -1,5 +1,5 @@
 <nav
-    class="flex-between background-light900_dark200 fixed z-50 w-full p=6 shadow-light-300 dark:shadow-none sm:px-12"
+    class="flex-between background-light900_dark200 fixed z-50 w-full gap-5 p=6 shadow-light-300 dark:shadow-none sm:px-12"
 >
     <a routerLink="/" class="flex items-center gap-1">
         <img ngSrc="/images/site-logo.svg" width="23" height="23" alt="AngularDevflow" />
@@ -11,5 +11,12 @@
 
     <p>Global Search</p>
 
-    <div class="flex-between gap-5">Theme</div>
+    <div class="flex-between gap-5">
+        <p-button
+            [icon]="theme.isDark() ? 'pi pi-sun' : 'pi pi-moon'"
+            size="small"
+            severity="secondary"
+            (onClick)="theme.toggle()"
+        />
+    </div>
 </nav>
